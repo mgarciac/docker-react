@@ -11,7 +11,8 @@ RUN npm run build
 # /app/build: folder with build files
 
 FROM nginx
-
+# For ElasticBeanstalk this is the port mapped for incomind traffic
+EXPOSE 80
 # copy build folder to the new container
 COPY --from=builder /app/build /usr/share/nginx/html
 
